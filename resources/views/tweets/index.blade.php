@@ -7,13 +7,16 @@
             <div class="more">
                 <span><img src="{{ asset('images/arrow_top.png') }}"></span>
                 <ul class="more_list">
-                  <li>
-                    <form action="/tweets/{{ $tweet->id }}" method="POST">
-                      @csrf
-                      @method('DELETE')
-                      <button type="submit">削除</button>
-                    </form>
-                  </li>
+                    <li>
+                        <a href="{{ route('tweets.edit', $tweet->id) }}">編集</a>
+                    </li>
+                    <li>
+                        <form action="/tweets/{{ $tweet->id }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">削除</button>
+                        </form>
+                    </li>
                 </ul>
             </div>
             <p>{{ $tweet->text }}</p>
