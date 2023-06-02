@@ -17,4 +17,10 @@ class TweetController extends Controller
         $tweet = new Tweet();
         return view('tweets.create', compact('tweet'));
     }
+
+    public function store(Request $request)
+    {
+        Tweet::create($request->only(['name', 'image', 'text']));
+        return view('tweets.store');
+    }
 }
