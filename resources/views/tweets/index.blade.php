@@ -8,6 +8,9 @@
                 <span><img src="{{ asset('images/arrow_top.png') }}"></span>
                 <ul class="more_list">
                     <li>
+                        <a href="{{ route('tweets.show', $tweet->id) }}">詳細</a>
+                    </li>
+                    <li>
                         <a href="{{ route('tweets.edit', $tweet->id) }}">編集</a>
                     </li>
                     <li>

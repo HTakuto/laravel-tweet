@@ -15,4 +15,4 @@ use App\Http\Controllers\TweetController;
 */
 
 Route::get('/', [TweetController::class, 'index'])->name('root');
-Route::resource('tweets', TweetController::class)->only(['index', 'create','store','destroy','edit','update']);
+Route::resource('tweets', TweetController::class);
