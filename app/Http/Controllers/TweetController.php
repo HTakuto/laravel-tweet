@@ -30,4 +30,17 @@ class TweetController extends Controller
         $tweet->delete();
         return view('tweets.destroy');
     }
+
+    public function edit($id)
+    {
+        $tweet = Tweet::find($id);
+        return view('tweets.edit', compact('tweet'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $tweet = Tweet::find($id);
+        $tweet->update($request->all());
+        return view('tweets.update');
+    }
 }
