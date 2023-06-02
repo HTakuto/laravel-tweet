@@ -23,4 +23,11 @@ class TweetController extends Controller
         Tweet::create($request->only(['name', 'image', 'text']));
         return view('tweets.store');
     }
+
+    public function destroy($id)
+    {
+        $tweet = Tweet::find($id);
+        $tweet->delete();
+        return view('tweets.destroy');
+    }
 }

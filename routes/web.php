@@ -18,4 +18,4 @@ use App\Http\Controllers\TweetController;
 //     return view('welcome');
 // });
 Route::get('/', [TweetController::class, 'index'])->name('root');
-Route::resource('tweets', TweetController::class)->only(['index', 'create','store']);
+Route::resource('tweets', TweetController::class)->only(['index', 'create','store','destroy']);
